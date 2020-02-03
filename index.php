@@ -12,25 +12,19 @@ $bot->auth->login('demonictype@gmail.com', 'lok1norse');
 
 // Get lists of your boards
 $boards = $bot->boards->forUser('demonictype');
-/* function ifArray ($array){
-    if(gettype($array)=="array"){   
-        foreach($array as $item){
-            if(gettype($item)=="array"){
-                return ifArray($item);
-            } else {
-                echo $item . "<br/>";
-            }
-        }
-    } else {
-        echo $array . "<br/>";
-    }
-}
-ifArray($boards); */
 // Create a pin
-$bot->pins->create('https://ngsochi.com/images/2019/10/leopard_001.jpg', $boards[1]['id'], 'Pin description');
 
-function postPinsFromFile($url, $certainBoard, $description){
-    //НЕ ЗАБЫТЬ ПОСТАВИТЬ ТАЙМЕР ДЛЯ КАЖДОГО ПОСТА
-    $bot->pins->create($url, $certainBoard, $description);
+/*     $bot->pins->create('https://www.dw.com/image/44504125_303.jpg', $boards[1]['id'], 'Pin description'); */
+function postPinsFromFile($url, $description){
+    global $bot;
+    global $boards;
+    //!!!!!!НЕ ЗАБЫТЬ ПОСТАВИТЬ ТАЙМЕР ДЛЯ КАЖДОГО ПОСТА!!!!!!
+    echo $url . "<br/>";
+    echo $description . "<br/>";
+
+    $bot->pins->create($url, $boards[1]['id'], $description);
 }
 
+foreach ($values as $row) {
+    postPinsFromFile($row[0], $row[2]);
+}

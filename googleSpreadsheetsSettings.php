@@ -1,9 +1,9 @@
 <?php
 require __DIR__ . '/vendor/autoload.php';
 
-if (php_sapi_name() != 'cli') {
+/* if (php_sapi_name() != 'cli') {
     throw new Exception('This application must be run on the command line.');
-}
+} */
 
 /**
  * Returns an authorized API client.
@@ -70,7 +70,7 @@ $range = 'List1!A2:C';
 $response = $service->spreadsheets_values->get($spreadsheetId, $range);
 $values = $response->getValues();
 
-if (empty($values)) {
+/* if (empty($values)) {
     print "No data found.\n";
 } else {
     print "Name, Major:\n";
@@ -78,4 +78,4 @@ if (empty($values)) {
         // Print columns A and E, which correspond to indices 0 and 4.
         printf("%s, %s\n", $row[0], $row[1], $row[2]);
     }
-}
+} */
