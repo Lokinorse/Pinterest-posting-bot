@@ -1,0 +1,13 @@
+{
+    "name": "fargo/pinterest_bot",
+    "authors": [
+        {
+            "name": "Lokinorse",
+            "email": "demonictype@gmail.com"
+        }
+    ],
+    "require": {
+        "seregazhuk/pinterest-bot": "^5.9",
+        "google/apiclient": "^2.0"
+    }
+}
