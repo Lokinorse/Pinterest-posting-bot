@@ -18,13 +18,15 @@ $boards = $bot->boards->forUser('demonictype');
 function postPinsFromFile($url, $description){
     global $bot;
     global $boards;
-    //!!!!!!НЕ ЗАБЫТЬ ПОСТАВИТЬ ТАЙМЕР ДЛЯ КАЖДОГО ПОСТА!!!!!!
-    echo $url . "<br/>";
-    echo $description . "<br/>";
-
+    sleep(61); //Задержка необходима во избежание бана
     $bot->pins->create($url, $boards[1]['id'], $description);
+
+
 }
 
 foreach ($values as $row) {
-    postPinsFromFile($row[0], $row[2]);
+
+    postPinsFromFile($row[0], $row[1]);
+
+
 }
