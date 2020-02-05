@@ -7,6 +7,7 @@
     <form id='pinterest_account' action="logined.php" method="post">
         <input type='text' id = 'pinterest_login' name = 'pinterest_login' placeholder = 'pinterest login'>
         <input type='text' id = 'pinterest_password' name = 'pinterest_password' placeholder = 'pinterest password'>
+        <input type='text' id = 'pinterest_nickname' name = 'pinterest_nickname' placeholder = 'pinterest nickname(in url)'>
         <label  for="boardselector">Выберите доску</label>
         <input type="number" id="boardselector" name = 'board_number' min="1" max="1000">
         <button class="btn btn-primary" >Запустить бота для этого аккаунта</button>
