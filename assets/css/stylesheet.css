@@ -1,0 +1,14 @@
+body {
+    padding:10px;
+
+}
+
+form {
+    margin:10px;
+    max-width:15%;
+    display:flex;
+    flex-direction: column;
+}
+label {
+    padding-top:20px;
+}

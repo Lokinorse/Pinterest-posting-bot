@@ -1,24 +1,16 @@
-<?php
-require('vendor/autoload.php'); 
-require_once('googleSpreadsheetsSettings.php');
+<html>
+<head>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+<link rel="stylesheet" href="assets/css/stylesheet.css">
+</head>
+<body>
+    <form id='pinterest_account' action="logined.php" method="post">
+        <input type='text' id = 'pinterest_login' name = 'pinterest_login' placeholder = 'pinterest login'>
+        <input type='text' id = 'pinterest_password' name = 'pinterest_password' placeholder = 'pinterest password'>
+        <label  for="boardselector">Выберите доску</label>
+        <input type="number" id="boardselector" name = 'board_number' min="1" max="1000">
+        <button class="btn btn-primary" >Запустить бота для этого аккаунта</button>
+    </form>
+</body>
 
-use seregazhuk\PinterestBot\Factories\PinterestBot;
-
-$bot = PinterestBot::create();
-$bot->auth->login('demonictype@gmail.com', 'lok1norse');
-// Get lists of your boards
-$boards = $bot->boards->forUser('demonictype');
-
-// Post pins from the file
-function postPinsFromFile($url, $description)
-{
-    global $bot;
-    global $boards;
-    sleep(61); //delay is required to avoid ban
-    $bot->pins->create($url, $boards[1]['id'], $description);
-}
-
-foreach ($values as $row) 
-{
-    postPinsFromFile($row[0], $row[1]);
-}
+</html>
